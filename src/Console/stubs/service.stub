@@ -1,0 +1,18 @@
+<?php
+
+namespace DummyNamespace;
+
+use zenlaravel\Services\Service;
+
+final class DummyClass extends Service
+{
+    /**
+     * Set model class name.
+     *
+     * @return void
+     */
+    protected function setModel(): void
+    {
+        $this->model = Model::class;
+    }
+}

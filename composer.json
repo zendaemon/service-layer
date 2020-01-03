@@ -4,12 +4,29 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "dev",
-            "email": "olenin.denis@gmail.com"
+            "name": "zenlaravel",
+            "email": "zenlaravel@gmail.com"
         }
     ],
     "require": {},
     "require-dev": {
         "orchestra/testbench": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "zenlaravel\\Services\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "zenlaravel\\Services\\Tests": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "zenlaravel\\Services\\ServicesServiceProvider"
+            ]
+        }
     }
 }
