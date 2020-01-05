@@ -1,8 +1,8 @@
 <?php
 
-namespace zenlaravel\Services\Tests;
+namespace Zendaemon\Services\Tests;
 
-use zenlaravel\Services\ServicesServiceProvider;
+use Zendaemon\Services\ServicesServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

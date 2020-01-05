@@ -1,9 +1,10 @@
 <?php
 
-namespace zenlaravel\Services\Console;
+namespace Zendaemon\Services\Console;
 
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 
 class ConsoleMakeService extends GeneratorCommand
 {
@@ -35,7 +36,15 @@ class ConsoleMakeService extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__.'/stubs/service.stub';
+        $stub = null;
+
+        if ($this->option('resource')) {
+            $stub = '/stubs/service.resource.stub';
+        }
+
+        $stub = $stub ?? '/stubs/service.stub';
+
+        return __DIR__.$stub;
     }
 
     /**
@@ -58,6 +67,18 @@ class ConsoleMakeService extends GeneratorCommand
     {
         return [
             ['name', InputArgument::REQUIRED, 'The name of the service'],
+        ];
+    }
+
+    /**
+     * Get the console command options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        return [
+            ['resource', 'r', InputOption::VALUE_NONE, 'Generate a service for resource controller class.'],
         ];
     }
 }

@@ -1,31 +1,35 @@
 {
-    "name": "zenlaravel/service-layer",
+    "name": "zendaemon/service-layer",
     "description": "Service layer for laravel applications",
     "license": "MIT",
     "authors": [
         {
-            "name": "zenlaravel",
-            "email": "zenlaravel@gmail.com"
+            "name": "zendaemon",
+            "email": "denis.olenin@outlook.com"
         }
     ],
-    "require": {},
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2",
+        "illuminate/support": "^5|^6"
+    },
     "require-dev": {
         "orchestra/testbench": "^4.4"
     },
     "autoload": {
         "psr-4": {
-            "zenlaravel\\Services\\": "src/"
+            "Zendaemon\\Services\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "zenlaravel\\Services\\Tests": "tests/"
+            "Zendaemon\\Services\\Tests": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "zenlaravel\\Services\\ServicesServiceProvider"
+                "Zendaemon\\Services\\ServicesServiceProvider"
             ]
         }
     }

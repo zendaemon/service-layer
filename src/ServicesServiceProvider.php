@@ -1,6 +1,6 @@
 <?php
 
-namespace zenlaravel\Services;
+namespace Zendaemon\Services;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -17,6 +17,6 @@ class ServicesServiceProvider extends ServiceProvider
 
     public function register()
     {
-
+        //
     }
 }

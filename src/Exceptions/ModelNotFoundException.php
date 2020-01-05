@@ -1,6 +1,6 @@
 <?php
 
-namespace zenlaravel\Services\Exceptions;
+namespace Zendaemon\Services\Exceptions;
 
 use Exception;
 

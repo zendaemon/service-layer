@@ -1,11 +1,11 @@
 <?php
 
-namespace zenlaravel\Services;
+namespace Zendaemon\Services;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use zenlaravel\Services\Exceptions\ModelNotFoundException;
+use Zendaemon\Services\Exceptions\ModelNotFoundException;
 
 abstract class Service
 {
