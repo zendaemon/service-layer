@@ -2,6 +2,7 @@
 [![License](https://poser.pugx.org/zendaemon/service-layer/license)](https://packagist.org/packages/zendaemon/service-layer)
 [![Latest Stable Version](https://poser.pugx.org/zendaemon/service-layer/v/stable)](https://packagist.org/packages/zendaemon/service-layer)
 [![Total Downloads](https://poser.pugx.org/zendaemon/service-layer/downloads)](https://packagist.org/packages/zendaemon/service-layer)
+[![StyleCI](https://github.styleci.io/repos/231975607/shield?branch=master)](https://github.styleci.io/repos/231975607)
 
 ## Installation
 

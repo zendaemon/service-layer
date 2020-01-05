@@ -12,7 +12,7 @@ abstract class Service
     const DEFAULT_PER_PAGE_ITEMS = 10;
 
     /** @var Model */
-    private $model;
+    protected $model;
 
     public function __construct()
     {
