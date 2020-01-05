@@ -1,6 +1,12 @@
 {
     "name": "zendaemon/service-layer",
     "description": "Service layer for laravel applications",
+    "keywords": [
+        "zen",
+        "zendaemon",
+        "laravel",
+        "service"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -9,6 +15,7 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=7.2",
         "illuminate/support": "^5|^6"
