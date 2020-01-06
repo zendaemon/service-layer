@@ -7,22 +7,25 @@ use Zendaemon\Services\Tests\TestCase;
 
 class CommandTest extends TestCase
 {
+    private function clearFiles()
+    {
+        if (File::exists(app_path('Services'))) {
+            File::deleteDirectory(app_path('Services'));
+        }
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
 
-        if (File::exists(app_path('Services/'))) {
-            File::deleteDirectory(app_path('Services/'));
-        }
+        $this->clearFiles();
     }
 
     protected function tearDown(): void
     {
-        parent::tearDown();
+        $this->clearFiles();
 
-        if (File::exists(app_path('Services/'))) {
-            File::deleteDirectory(app_path('Services/'));
-        }
+        parent::tearDown();
     }
 
     public function testMakeSimpleServiceCommand(): void
