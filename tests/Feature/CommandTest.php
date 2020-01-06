@@ -11,8 +11,8 @@ class CommandTest extends TestCase
     {
         parent::setUp();
 
-        if (File::exists(app_path("Services/"))) {
-            File::deleteDirectory(app_path("Services/"));
+        if (File::exists(app_path('Services/'))) {
+            File::deleteDirectory(app_path('Services/'));
         }
     }
 
@@ -20,8 +20,8 @@ class CommandTest extends TestCase
     {
         parent::tearDown();
 
-        if (File::exists(app_path("Services/"))) {
-            File::deleteDirectory(app_path("Services/"));
+        if (File::exists(app_path('Services/'))) {
+            File::deleteDirectory(app_path('Services/'));
         }
     }
 
@@ -31,16 +31,16 @@ class CommandTest extends TestCase
             'name' => 'TestService',
         ]);
 
-        $this->assertFileExists(app_path("Services/TestService.php"));
+        $this->assertFileExists(app_path('Services/TestService.php'));
     }
 
     public function testMakeResourceServiceCommand(): void
     {
         $this->artisan('make:service', [
-            'name' => 'TestResourceService',
+            'name'       => 'TestResourceService',
             '--resource' => true,
         ]);
 
-        $this->assertFileExists(app_path("Services/TestResourceService.php"));
+        $this->assertFileExists(app_path('Services/TestResourceService.php'));
     }
 }

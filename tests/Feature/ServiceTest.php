@@ -3,8 +3,8 @@
 namespace Zendaemon\Services\Tests\Feature;
 
 use Illuminate\Http\Request;
-use Zendaemon\Services\Tests\Extra\TestModel;
 use Zendaemon\Services\Service;
+use Zendaemon\Services\Tests\Extra\TestModel;
 use Zendaemon\Services\Tests\TestCase;
 
 class ServiceTest extends TestCase
@@ -15,7 +15,7 @@ class ServiceTest extends TestCase
     {
         parent::setUp();
 
-        $this->service = new class extends Service {
+        $this->service = new class() extends Service {
             protected function setModel(): void
             {
                 $this->model = TestModel::class;
@@ -29,7 +29,7 @@ class ServiceTest extends TestCase
         $model = $this->service->create($request);
 
         $this->assertInstanceOf(TestModel::class, $model);
-        $this->assertDatabaseHas((new TestModel)->getTable(), [
+        $this->assertDatabaseHas((new TestModel())->getTable(), [
             'name' => $request->input('name'),
         ]);
     }
@@ -41,7 +41,7 @@ class ServiceTest extends TestCase
         $updatedModel = $this->service->update($model, $request);
 
         $this->assertInstanceOf(TestModel::class, $updatedModel);
-        $this->assertDatabaseHas((new TestModel)->getTable(), [
+        $this->assertDatabaseHas((new TestModel())->getTable(), [
             'name' => $request->input('name'),
         ]);
     }
@@ -51,7 +51,7 @@ class ServiceTest extends TestCase
         $model = TestModel::create(TestModel::factory());
         $this->service->destroy($model);
 
-        $this->assertDatabaseMissing((new TestModel)->getTable(), [
+        $this->assertDatabaseMissing((new TestModel())->getTable(), [
             'name' => $model->name,
         ]);
     }

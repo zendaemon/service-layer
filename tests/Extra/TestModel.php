@@ -2,10 +2,10 @@
 
 namespace Zendaemon\Services\Tests\Extra;
 
+use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Faker\Generator as Faker;
 
 class TestModel extends Model
 {
