@@ -30,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Zendaemon\\Services\\Tests": "tests/"
+            "Zendaemon\\Services\\Tests\\": "tests/"
         }
     },
     "extra": {
