@@ -1,8 +1,12 @@
 ## Laravel Service layer
 [![License](https://poser.pugx.org/zendaemon/service-layer/license)](https://packagist.org/packages/zendaemon/service-layer)
+[![Build Status](https://scrutinizer-ci.com/g/zendaemon/service-layer/badges/build.png?b=master)](https://scrutinizer-ci.com/g/zendaemon/service-layer/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/zendaemon/service-layer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/zendaemon/service-layer/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/zendaemon/service-layer/v/stable)](https://packagist.org/packages/zendaemon/service-layer)
 [![Total Downloads](https://poser.pugx.org/zendaemon/service-layer/downloads)](https://packagist.org/packages/zendaemon/service-layer)
 [![StyleCI](https://github.styleci.io/repos/231975607/shield?branch=master)](https://github.styleci.io/repos/231975607)
+
+This Laravel package provides support for simple service layer.
 
 ## Installation
 

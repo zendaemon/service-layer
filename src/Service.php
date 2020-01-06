@@ -16,6 +16,8 @@ abstract class Service
 
     public function __construct()
     {
+        $this->setModel();
+
         if (!$this->model || !class_exists($this->model)) {
             throw new ModelNotFoundException("Model {$this->model} not found.");
         }
