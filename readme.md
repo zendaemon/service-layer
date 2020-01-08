@@ -7,7 +7,7 @@
 [![StyleCI](https://github.styleci.io/repos/231975607/shield?branch=master)](https://github.styleci.io/repos/231975607)
 
 This Laravel package provides support for simple service layer.
-
+Service class the best place for your business logic.
 ## Installation
 
 Require this package with composer.
