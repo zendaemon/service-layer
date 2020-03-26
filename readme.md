@@ -19,20 +19,28 @@ composer require zendaemon/service-layer
 If you don't use auto-discovery, add the ServiceProvider to the providers array in config/app.php
 
 ```php
-Zendaemon\Services\ServicesServiceProvider::class,
+Zendaemon\Services\ServiceLayerServiceProvider::class,
 ```
 
+After installing ServiceLayer, publish its assets using the services:install Artisan command:
+
+php artisan services:install
+
 ## Usage
+
+###Simple service
 Using the make:service Artisan command, you can quickly create such a base service:
 ```shell
 php artisan make:service SomeService
 ```
 
-or you can create static service for simple tasks:
+### Static service
+Or you can create static service for simple tasks:
 ```shell
 php artisan make:service SomeService --static
 ```
 
+### Resource service
 Also you can create service for resource controller:
 ```shell
 php artisan make:service SomeService --resource
@@ -94,6 +102,7 @@ final class SomeController extends Controller
 }
 ```
 
+### Service class binding
 You can bind your services in Providers/ServiceLayerServiceProvider class like so.
 ```php
 namespace App\Providers;
@@ -101,7 +110,7 @@ namespace App\Providers;
 use App\Services\LocationService;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class ServiceLayerServiceProvider extends ServiceProvider
 {
     /**
          * Register any application services.

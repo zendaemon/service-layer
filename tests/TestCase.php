@@ -2,7 +2,7 @@
 
 namespace Zendaemon\Services\Tests;
 
-use Zendaemon\Services\ServicesServiceProvider;
+use Zendaemon\Services\ServiceLayerServiceProvider;
 use Zendaemon\Services\Tests\Extra\TestModel;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
@@ -22,7 +22,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app)
     {
         return [
-            ServicesServiceProvider::class,
+            ServiceLayerServiceProvider::class,
         ];
     }
 

@@ -36,6 +36,7 @@ class InstallCommand extends Command
     /**
      * Register the ServiceLayer service provider in the application configuration file.
      *
+     * @throws \Exception
      * @return void
      */
     protected function registerServiceLayerServiceProvider()
@@ -48,16 +49,20 @@ class InstallCommand extends Command
             return;
         }
 
-        file_put_contents(config_path('app.php'), str_replace(
-            "{$namespace}\\Providers\EventServiceProvider::class,".PHP_EOL,
-            "{$namespace}\\Providers\EventServiceProvider::class,".PHP_EOL."        {$namespace}\Providers\ServiceLayerServiceProvider::class,".PHP_EOL,
-            $appConfig
-        ));
+        if (! file_exists(app_path('Providers/ServiceLayerServiceProvider.php'))) {
+            throw new \Exception('ServiceLayerServiceProvider not published.');
+        }
 
         file_put_contents(app_path('Providers/ServiceLayerServiceProvider.php'), str_replace(
             "namespace App\Providers;",
             "namespace {$namespace}\Providers;",
             file_get_contents(app_path('Providers/ServiceLayerServiceProvider.php'))
+        ));
+
+        file_put_contents(config_path('app.php'), str_replace(
+            "{$namespace}\\Providers\EventServiceProvider::class,".PHP_EOL,
+            "{$namespace}\\Providers\EventServiceProvider::class,".PHP_EOL."        {$namespace}\Providers\ServiceLayerServiceProvider::class,".PHP_EOL,
+            $appConfig
         ));
     }
 }
