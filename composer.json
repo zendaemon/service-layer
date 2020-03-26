@@ -40,7 +40,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Zendaemon\\Services\\ServicesServiceProvider"
+                "Zendaemon\\Services\\ServiceLayerServiceProvider"
             ]
         }
     }
