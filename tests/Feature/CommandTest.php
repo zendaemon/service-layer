@@ -3,7 +3,6 @@
 namespace Zendaemon\Services\Tests\Feature;
 
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
 use Zendaemon\Services\Tests\TestCase;
 
 class CommandTest extends TestCase

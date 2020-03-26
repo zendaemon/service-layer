@@ -37,6 +37,7 @@ class InstallCommand extends Command
      * Register the ServiceLayer service provider in the application configuration file.
      *
      * @throws \Exception
+     *
      * @return void
      */
     protected function registerServiceLayerServiceProvider()
@@ -49,7 +50,7 @@ class InstallCommand extends Command
             return;
         }
 
-        if (! file_exists(app_path('Providers/ServiceLayerServiceProvider.php'))) {
+        if (!file_exists(app_path('Providers/ServiceLayerServiceProvider.php'))) {
             throw new \Exception('ServiceLayerServiceProvider not published.');
         }
 
