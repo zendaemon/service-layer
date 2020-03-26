@@ -4,10 +4,11 @@ namespace Zendaemon\Services\Tests\Feature;
 
 use Illuminate\Http\Request;
 use Zendaemon\Services\Service;
+use Zendaemon\Services\Traits\{CreateModel, DestroyModel, ReadModel, UpdateModel};
 use Zendaemon\Services\Tests\Extra\TestModel;
 use Zendaemon\Services\Tests\TestCase;
 
-class ServiceTest extends TestCase
+class ResourceServiceTest extends TestCase
 {
     private $service;
 
@@ -16,6 +17,8 @@ class ServiceTest extends TestCase
         parent::setUp();
 
         $this->service = new class() extends Service {
+            use CreateModel, ReadModel, UpdateModel, DestroyModel;
+
             protected function setModel(): void
             {
                 $this->model = TestModel::class;

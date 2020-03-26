@@ -5,7 +5,10 @@
         "zen",
         "zendaemon",
         "laravel",
-        "service"
+        "service",
+        "service layer",
+        "business layer",
+        "business logic"
     ],
     "license": "MIT",
     "authors": [
@@ -17,12 +20,12 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=7.2",
+        "php": "^7.2.5",
         "illuminate/support": "^5|^6|^7"
     },
     "require-dev": {
         "orchestra/testbench": "^3.8 || ^4.0",
-        "phpunit/phpunit": "^8.0"
+        "phpunit/phpunit": "^8.5"
     },
     "autoload": {
         "psr-4": {

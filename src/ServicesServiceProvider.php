@@ -11,6 +11,7 @@ class ServicesServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 Console\ConsoleMakeService::class,
+                Console\InstallCommand::class,
             ]);
         }
     }

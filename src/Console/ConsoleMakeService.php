@@ -42,6 +42,10 @@ class ConsoleMakeService extends GeneratorCommand
             $stub = '/stubs/service.resource.stub';
         }
 
+        if ($this->option('static')) {
+            $stub = '/stubs/service.static.stub';
+        }
+
         $stub = $stub ?? '/stubs/service.stub';
 
         return __DIR__.$stub;
@@ -80,6 +84,7 @@ class ConsoleMakeService extends GeneratorCommand
     {
         return [
             ['resource', 'r', InputOption::VALUE_NONE, 'Generate a service for resource controller class.'],
+            ['static', 's', InputOption::VALUE_NONE, 'Generate a static service.'],
         ];
     }
 }

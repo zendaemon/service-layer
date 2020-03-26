@@ -3,9 +3,12 @@
 namespace DummyNamespace;
 
 use Zendaemon\Services\Service;
+use Zendaemon\Services\Traits\{CreateModel, DestroyModel, ReadModel, UpdateModel};
 
 final class DummyClass extends Service
 {
+    use CreateModel, ReadModel, UpdateModel, DestroyModel;
+
     /**
      * Set model class name.
      *
