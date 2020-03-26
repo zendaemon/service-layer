@@ -28,12 +28,18 @@ Using the make:service Artisan command, you can quickly create such a base servi
 php artisan make:service SomeService
 ```
 
-or you can create service for resource controller:
+or you can create static service for simple tasks:
+```shell
+php artisan make:service SomeService --static
+```
+
+Also you can create service for resource controller:
 ```shell
 php artisan make:service SomeService --resource
 ```
 
-This command will generate a service at app/Services/SomeService.php. The controller will contain a method for each of the available resource operations.
+This command will generate a service at app/Services/SomeService.php. 
+The service will contain a trait with some methods for each of the available resource operations.
 
 Next, you may set a model to the service:
 ```php
@@ -48,7 +54,7 @@ Next, you may set a model to the service:
     }
 ```
 
-You can now add SomeService in your controller:
+You can now add SomeService in your controller through DI:
 ```php
 final class SomeController extends Controller
 {
@@ -85,5 +91,28 @@ final class SomeController extends Controller
 
         return response()->json(['success' => Response::HTTP_OK]);
     }
+}
+```
+
+You can bind your services in Providers/ServiceLayerServiceProvider class like so.
+```php
+namespace App\Providers;
+
+use App\Services\LocationService;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+         * Register any application services.
+         *
+         * @return void
+         */
+        public function register()
+        {
+            $this->app->singleton(LocationService::class, function () {
+                return new LocationService;
+            });
+        }
 }
 ```
