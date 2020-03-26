@@ -24,9 +24,9 @@ class InstallCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return void
-     *
      * @throws \Exception
+     * 
+     * @return void
      */
     public function handle()
     {
@@ -38,9 +38,9 @@ class InstallCommand extends Command
     /**
      * Register the ServiceLayer service provider in the application configuration file.
      *
-     * @return void
-     *
      * @throws \Exception
+     *
+     * @return void
      */
     protected function registerServiceLayerServiceProvider()
     {
