@@ -25,7 +25,7 @@ class InstallCommand extends Command
      * Execute the console command.
      *
      * @throws \Exception
-     * 
+     *
      * @return void
      */
     public function handle()
