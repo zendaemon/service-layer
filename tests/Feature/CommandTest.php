@@ -40,7 +40,7 @@ class CommandTest extends TestCase
     public function testMakeResourceServiceCommand(): void
     {
         $this->artisan('make:service', [
-            'name' => 'TestResourceService',
+            'name'       => 'TestResourceService',
             '--resource' => true,
         ]);
 
@@ -50,7 +50,7 @@ class CommandTest extends TestCase
     public function testMakeStaticServiceCommand(): void
     {
         $this->artisan('make:service', [
-            'name' => 'TestStaticService',
+            'name'     => 'TestStaticService',
             '--static' => true,
         ]);
 

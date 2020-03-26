@@ -4,9 +4,12 @@ namespace Zendaemon\Services\Tests\Feature;
 
 use Illuminate\Http\Request;
 use Zendaemon\Services\Service;
-use Zendaemon\Services\Traits\{CreateModel, DestroyModel, ReadModel, UpdateModel};
 use Zendaemon\Services\Tests\Extra\TestModel;
 use Zendaemon\Services\Tests\TestCase;
+use Zendaemon\Services\Traits\CreateModel;
+use Zendaemon\Services\Traits\DestroyModel;
+use Zendaemon\Services\Traits\ReadModel;
+use Zendaemon\Services\Traits\UpdateModel;
 
 class ResourceServiceTest extends TestCase
 {
@@ -17,7 +20,10 @@ class ResourceServiceTest extends TestCase
         parent::setUp();
 
         $this->service = new class() extends Service {
-            use CreateModel, ReadModel, UpdateModel, DestroyModel;
+            use CreateModel;
+            use ReadModel;
+            use UpdateModel;
+            use DestroyModel;
 
             protected function setModel(): void
             {

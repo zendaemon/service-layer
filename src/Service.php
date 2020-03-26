@@ -13,6 +13,7 @@ abstract class Service implements ServiceInterface
 
     /**
      * Service constructor.
+     *
      * @throws ModelNotFoundException
      */
     public function __construct()
