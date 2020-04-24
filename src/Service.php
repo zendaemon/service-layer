@@ -2,13 +2,12 @@
 
 namespace Zendaemon\Services;
 
-use Illuminate\Database\Eloquent\Model;
 use Zendaemon\Services\Contracts\ServiceInterface;
 use Zendaemon\Services\Exceptions\ModelNotFoundException;
 
 abstract class Service implements ServiceInterface
 {
-    /** @var Model */
+    /** @var string */
     protected $model;
 
     /**
@@ -32,7 +31,7 @@ abstract class Service implements ServiceInterface
      */
     abstract protected function setModel(): void;
 
-    public function getModel(): Model
+    public function getModel(): string
     {
         return $this->model;
     }
