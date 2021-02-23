@@ -1,9 +1,10 @@
 {
-    "name": "zendaemon/service-layer",
-    "description": "Service layer for laravel applications",
+    "name": "zendaemon/service-layer-generator",
+    "description": "Service layer generator for laravel applications",
     "keywords": [
         "zen",
         "zendaemon",
+        "generator",
         "laravel",
         "service",
         "service layer",
@@ -20,8 +21,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.2.5",
-        "illuminate/support": "^5|^6|^7"
+        "php": "^7.4",
+        "illuminate/support": "^6|^7|^8"
     },
     "require-dev": {
         "orchestra/testbench": "^3.8 || ^4.0",
@@ -40,7 +41,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Zendaemon\\Services\\ServiceLayerServiceProvider"
+                "ServiceLayerGeneratorServiceProvider"
             ]
         }
     }

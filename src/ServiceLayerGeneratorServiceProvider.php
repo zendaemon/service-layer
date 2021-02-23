@@ -4,7 +4,7 @@ namespace Zendaemon\Services;
 
 use Illuminate\Support\ServiceProvider;
 
-class ServiceLayerServiceProvider extends ServiceProvider
+class ServiceLayerGeneratorServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -20,8 +20,8 @@ class ServiceLayerServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../stubs/ServiceLayerServiceProvider.stub' => app_path('Providers/ServiceLayerServiceProvider.php'),
-            ], 'service-layer-provider');
+                __DIR__.'/../stubs/ServiceLayerGeneratorServiceProvider.stub' => app_path('Providers/ServiceLayerGeneratorServiceProvider.php'),
+            ], 'service-layer-generator-provider');
         }
     }
 }

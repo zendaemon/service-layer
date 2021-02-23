@@ -37,16 +37,6 @@ class CommandTest extends TestCase
         $this->assertFileExists(app_path('Services/TestService.php'));
     }
 
-    public function testMakeResourceServiceCommand(): void
-    {
-        $this->artisan('make:service', [
-            'name'       => 'TestResourceService',
-            '--resource' => true,
-        ]);
-
-        $this->assertFileExists(app_path('Services/TestResourceService.php'));
-    }
-
     public function testMakeStaticServiceCommand(): void
     {
         $this->artisan('make:service', [

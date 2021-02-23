@@ -19,7 +19,7 @@ composer require zendaemon/service-layer
 If you don't use auto-discovery, add the ServiceProvider to the providers array in config/app.php
 
 ```php
-Zendaemon\Services\ServiceLayerServiceProvider::class,
+Zendaemon\Services\ServiceLayerGeneratorServiceProvider::class,
 ```
 
 After installing ServiceLayer, publish its assets using the services:install Artisan command:
