@@ -28,7 +28,7 @@ php artisan services:install
 
 ## Usage
 
-###Simple service
+### Simple service
 Using the make:service Artisan command, you can quickly create such a base service:
 ```shell
 php artisan make:service SomeService
@@ -38,28 +38,6 @@ php artisan make:service SomeService
 Or you can create static service for simple tasks:
 ```shell
 php artisan make:service SomeService --static
-```
-
-### Resource service
-Also you can create service for resource controller:
-```shell
-php artisan make:service SomeService --resource
-```
-
-This command will generate a service at app/Services/SomeService.php. 
-The service will contain a trait with some methods for each of the available resource operations.
-
-Next, you may set a model to the service:
-```php
-    /**
-     * Set model class name.
-     *
-     * @return void
-     */
-    protected function setModel(): void
-    {
-        $this->model = SomeModel::class;
-    }
 ```
 
 You can now add SomeService in your controller through DI:
@@ -76,22 +54,22 @@ final class SomeController extends Controller
 
     public function index(): ?ResourceCollection
     {
-        return SomeCollection::collection($this->service->paginated());
+        return SomeCollection::collection($this->service->someListMethod());
     }
 
     public function store(StoreSomeRequest $request): ?JsonResource
     {
-        return SomeResource::make($this->service->create($request));
+        return SomeResource::make($this->service->someCreationMethod($request));
     }
 
     public function update(UpdateSomeRequest $request, SomeModel $model): ?JsonResource
     {
-        return SomeResource::make($this->service->update($request, $model));
+        return SomeResource::make($this->service->someUpdatingMethod($request, $model));
     }
 
     public function destroy(SomeModel $model): JsonResponse
     {
-        if (! $this->service->destroy($model)) {
+        if (! $this->service->someDestroyMethod($model)) {
             return response()->json([
                 'message' => 'Some error.',
             ], Response::HTTP_INTERNAL_SERVER_ERROR);        

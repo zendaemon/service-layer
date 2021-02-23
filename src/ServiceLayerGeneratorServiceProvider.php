@@ -20,7 +20,7 @@ class ServiceLayerGeneratorServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../stubs/ServiceLayerGeneratorServiceProvider.stub' => app_path('Providers/ServiceLayerGeneratorServiceProvider.php'),
+                __DIR__.'/../stubs/ServiceLayerServiceProvider.stub' => app_path('Providers/ServiceLayerServiceProvider.php'),
             ], 'service-layer-generator-provider');
         }
     }

@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class InstallCommand extends Command
 {
-    private const PROVIDER_NAME = "ServiceLayerGeneratorServiceProvider";
+    private const PROVIDER_NAME = "ServiceLayerServiceProvider";
 
     /**
      * The name and signature of the console command.
